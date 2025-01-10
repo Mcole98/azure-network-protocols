@@ -4,12 +4,12 @@
 
 # Network Security Groups (NSGs) and Inspecting Traffic Between Azure Virtual Machines
 
-In this tutorial, we observe various network traffic to and from Azure Virtual Machines with Wireshark as well as experiment with Network Security Groups.
+This guide covers observing network traffic between Azure Virtual Machines using Wireshark and experimenting with Network Security Groups.
 
-## Environments and Technologies Used
+## Technologies and Tools Used
 
 - Microsoft Azure (Virtual Machines/Compute)
-- Remote Desktop
+- Remote Desktop Protocol (RDP)
 - Various Command-Line Tools
 - Various Network Protocols (SSH, RDH, DNS, HTTP/S, ICMP)
 - Wireshark (Protocol Analyzer)
@@ -37,7 +37,7 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
    - Click "Review + Create," then "Create."
   
 <p>
-<img src="https://i.imgur.com/nkfDzdG.png" height="80%" width="80%" alt="Step 1 Lab 2"/>
+<img src="https://i.imgur.com/nkfDzdG.png" height="80%" width="80%" alt="Creating Resource Group"/>
 </p>
 
 3. **Create a Windows 10 Virtual Machine**:
@@ -50,19 +50,19 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
    - Complete the setup and deploy the VM.
   
 <p>
-<img src="https://i.imgur.com/ln5shD0.png" height="80%" width="80%" alt="Step 1 Lab 2"/>
+<img src="https://i.imgur.com/ln5shD0.png" height="80%" width="80%" alt="Creating Windows VM"/>
 </p>
 
 <p>
-<img src="https://i.imgur.com/dBrcujc.png" height="80%" width="80%" alt="Step 1 Lab 2"/>
+<img src="https://i.imgur.com/dBrcujc.png" height="80%" width="80%" alt="Configuring Windows VM"/>
 </p>
 
 <p>
-<img src="https://i.imgur.com/MCv4Q1g.png" height="80%" width="80%" alt="Step 1 Lab 2"/>
+<img src="https://i.imgur.com/MCv4Q1g.png" height="80%" width="80%" alt="Windows VM Deployment"/>
 </p>
 
 <p>
-<img src="https://i.imgur.com/iU9lo7m.png" height="80%" width="80%" alt="Step 1 Lab 2"/>
+<img src="https://i.imgur.com/iU9lo7m.png" height="80%" width="80%" alt="Windows VM Networking"/>
 </p>
 
 4. **Create a Linux (Ubuntu) Virtual Machine**:
@@ -75,19 +75,19 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
    - Complete the setup and deploy the VM.
 
 <p>
-<img src="https://i.imgur.com/uWwnh01.png" height="80%" width="80%" alt="Step 1 Lab 2"/>
+<img src="https://i.imgur.com/uWwnh01.png" height="80%" width="80%" alt="Creating Ubuntu VM"/>
 </p>
 
 <p>
-<img src="https://i.imgur.com/6iHplkL.png" height="80%" width="80%" alt="Step 1 Lab 2"/>
+<img src="https://i.imgur.com/6iHplkL.png" height="80%" width="80%" alt="Configuring Ubuntu VM"/>
 </p>
 
 <p>
-<img src="https://i.imgur.com/K2kS6ye.png" height="80%" width="80%" alt="Step 1 Lab 2"/>
+<img src="https://i.imgur.com/K2kS6ye.png" height="80%" width="80%" alt="Ubuntu VM Deployment"/>
 </p>
 
 <p>
-<img src="https://i.imgur.com/HhOHkjo.png" height="80%" width="80%" alt="Step 1 Lab 2"/>
+<img src="https://i.imgur.com/HhOHkjo.png" height="80%" width="80%" alt="Ubuntu VM Networking"/>
 </p>
 
 ---
@@ -105,11 +105,11 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 6. From the Windows 10 VM, ping a public website (e.g., `www.google.com`) and observe the ICMP traffic in Wireshark.
 
 <p>
-<img src="https://i.imgur.com/iN88a8x.png" height="80%" width="80%" alt="Step 2 Lab 2"/>
+<img src="https://i.imgur.com/iN88a8x.png" height="80%" width="80%" alt="ICMP Traffic"/>
 </p>
 
 <p>
-<img src="https://i.imgur.com/jcsAXgl.png" height="80%" width="80%" alt="Step 2 Lab 2"/>
+<img src="https://i.imgur.com/jcsAXgl.png" height="80%" width="80%" alt="ICMP Traffic"/>
 </p>
 
 ---
@@ -128,23 +128,23 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 7. Stop the ping activity.
 
 <p>
-<img src="https://i.imgur.com/X9VBE8M.png" height="80%" width="80%" alt="Step 1 Lab 2"/>
+<img src="https://i.imgur.com/X9VBE8M.png" height="80%" width="80%" alt="Configuring NSG"/>
 </p>
 
 <p>
-<img src="https://i.imgur.com/xOvIUta.png" height="80%" width="80%" alt="Step 1 Lab 2"/>
+<img src="https://i.imgur.com/xOvIUta.png" height="80%" width="80%" alt="Disabling ICMP"/>
 </p>
 
 <p>
-<img src="https://i.imgur.com/p8MGqMZ.png" height="80%" width="80%" alt="Step 1 Lab 2"/>
+<img src="https://i.imgur.com/p8MGqMZ.png" height="80%" width="80%" alt="Disabling ICMP"/>
 </p>
 
 <p>
-<img src="https://i.imgur.com/37YhB1B.png" height="80%" width="80%" alt="Step 1 Lab 2"/>
+<img src="https://i.imgur.com/37YhB1B.png" height="80%" width="80%" alt="Enabling ICMP"/>
 </p>
 
 <p>
-<img src="https://i.imgur.com/7O8lApB.png" height="80%" width="80%" alt="Step 1 Lab 2"/>
+<img src="https://i.imgur.com/7O8lApB.png" height="80%" width="80%" alt="Enabling ICMP"/>
 </p>
 
 ### Observe SSH Traffic
@@ -157,7 +157,7 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 4. Exit the SSH session: `exit`.
 
 <p>
-<img src="https://i.imgur.com/4UxjL6i.png" height="80%" width="80%" alt="Step 1 Lab 2"/>
+<img src="https://i.imgur.com/4UxjL6i.png" height="80%" width="80%" alt="Observing SSH Traffic"/>
 </p>
 
 ### Observe DHCP Traffic
@@ -168,7 +168,7 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 3. Observe the DHCP traffic in Wireshark.
 
 <p>
-<img src="https://i.imgur.com/b11FUBi.png" height="80%" width="80%" alt="Step 1 Lab 2"/>
+<img src="https://i.imgur.com/b11FUBi.png" height="80%" width="80%" alt="Observing DHCP Traffic"/>
 </p>
 
 ### Observe DNS Traffic
@@ -179,7 +179,7 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 3. Observe the DNS traffic in Wireshark.
 
 <p>
-<img src="https://i.imgur.com/gZnp0cn.png" height="80%" width="80%" alt="Step 1 Lab 2"/>
+<img src="https://i.imgur.com/gZnp0cn.png" height="80%" width="80%" alt="Observing DNS Traffic"/>
 </p>
 
 ### Observe RDP Traffic
@@ -189,7 +189,7 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 2. Observe the continuous RDP traffic between the Windows 10 VM and your local machine.
 
 <p>
-<img src="https://i.imgur.com/AblB0s9.png" height="80%" width="80%" alt="Step 1 Lab 2"/>
+<img src="https://i.imgur.com/AblB0s9.png" height="80%" width="80%" alt="Observing RDP Traffic"/>
 </p>
 
 ---
